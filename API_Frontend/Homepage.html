@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            AJAX RESTful api calls
+        </title> 
+        <link rel='stylesheet' href='/CSS/stylesheet.css' />
+    </head>
+    <body>
+        <h1>Movie Stuff</h1>
+        <h2>Enter Moview to GET,PUT,POST,DELETE<h2>
+            
+        <p>Title: <input type="text" id="Title"></p>
+        <p>Director: <input type="text" id="Director"></p>
+        <p>Genre: <input type="text" id="Genre"></p>
+            
+        <button onclick="GetButtonNoParams()" id="Get">Get</button>
+        <button id="Post">Post</button>
+        <button id="Put">Put</button>
+        <button id="Delete">Delete</button>
+
+
+        <h2>Movies List:</h2>
+        <ul id="movies"></ul>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/Jquery/jquery.js"></script>
+        <script src="JS/main.js"></script>
+    </body>
+</html>
