@@ -4,12 +4,12 @@ var $genre = $('#Genre');
 var $director = $('#Director');
 
 function addMovie(movie){ 
-    $moviesList.append(`<li id = ${movie.MovieId}><div class="clearfix"><strong>Title</strong>: ${movie.Title} 
-                                                  <br><strong>Genre</strong>: ${movie.Genre} <img src=${movie.ImageURL}>
-                                                  <br><strong>Director</strong>: ${movie.Director}
-                                                  <br><button onClick="DeleteButton(${movie.MovieId})">Delete Movie</button><button onClick="PutButton(${movie.MovieId})">Edit Movie</button>
-                        </div></li> `);  
+    $moviesList.append(`<li id = ${movie.MovieId}>name: ${movie.Title}, Genre: ${movie.Genre}, 
+    Director: ${movie.Director} <button id="${movie.MovieId}" onClick="DeleteButton(${movie.MovieId})">Delete Movie</button>
+                                <button id="${movie.MovieId}" onClick="PutButton(${movie.MovieId})">Edit Movie</button></li> `);  
+
 }
+
 function GetButtonNoParams(){
     $(function (){
         $.ajax({
@@ -28,6 +28,8 @@ function GetButtonNoParams(){
         });
     });
 }
+
+//adds new things to the backend
 function PostButton(){ 
     $(function (){
         var movie = { 
@@ -41,21 +43,16 @@ function PostButton(){
             url: 'https://localhost:44352/api/movie', //mine
             //url: 'https://localhost:44313/api/movie', //matts
             data: movie, //points to movie object declared at beginning of function 
-            success: function(){   
-                $('#Title').val('');
-                $('#Genre').val('');
-                $('#Director').val('');  
-                $('ul').empty();
-                GetButtonNoParams();  //make a get call      
+            success: function(newMovie){
+                addMovie(newMovie);
             }, 
             error: function(){ 
                 alert('error saving movie');
             }
         });
-
-        addMovie(newMovie);
     });
 }
+
 function PutButton(id){ 
     $(function (){
         var movie = { 
@@ -73,8 +70,7 @@ function PutButton(id){
             //url: 'https://localhost:44313/api/movie/' + id, //matts
             data: movie, //this movie object is being passed as the body parameter, held as data
             success: function(){     
-                $('ul').empty();
-                GetButtonNoParams();
+                alert('success');          
             }, 
             error: function(){ 
                 alert('error saving movie');
@@ -82,15 +78,15 @@ function PutButton(id){
         })
     });
 }
+
 function DeleteButton(id){ 
     $(function (){
         $.ajax({
             type: 'DELETE',
             url: 'https://localhost:44352/api/movie/' + id, //mine
-            //url: 'https://localhost:44313/api/movie/ + id, //matts
-            success: function(){
-                $('ul').empty();
-                GetButtonNoParams();
+            //url: 'https://localhost:44313/api/movie/ + id', //matts
+            sucess: function(){
+                alert('Success');
             },
             error: function(){ 
                 alert('error deleting movie');
@@ -98,4 +94,34 @@ function DeleteButton(id){
         })
 
     });
+
+
+}
+function GetById(){
+
+	            
+
+	var $id = $('#GetById');
+	var getById = $id.val();
+
+	var url = 'https://localhost:44313/api/movie/' + getById; //matts
+	console.log(url);
+
+	$(function (){
+	        $.ajax({
+	            type: 'GET',
+	            //url: 'https://localhost:44352/api/movie' + id,  //mine
+	            url: 'https://localhost:44313/api/movie/' + getById, //matts
+	            success: function(movies) { 
+	                //console.log('success', movies);
+	                $.each(movies, function(i, movie){ //goes through array of data and manipulates each item 
+	                    addMovie(movie);
+	                });
+	            },
+	            error: function(){ 
+	                alert('error loading movies');
+	            }
+	        });
+	    });	
+    	
 }
