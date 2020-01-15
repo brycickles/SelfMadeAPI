@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<script src="/CSS/stylesheet.css"></script>
+<link rel="stylesheet" type="text/css" href="CSS/stylesheet.css"/>
+
+
 <html>
     <head>
         <title>
@@ -6,20 +10,37 @@
         </title> 
     </head>
     <body>
-        <h1>Movie Stuff</h1>
-        <h2>Enter Moview to GET,PUT,POST,DELETE<h2>
+        <div class="pageHeaderBox">
             
-        <p>Title: <input type="text" id="Title"></p>
-        <p>Director: <input type="text" id="Director"></p>
-        <p>Genre: <input type="text" id="Genre"></p>
+            <h1>Movie Database</h1>            
+            <p>Title: <input type="text" id="Title"></p>
+            <p>Director: <input type="text" id="Director"></p>
+            <p>Genre: <input type="text" id="Genre"></p>    
+
+            <div class="buttons">
+                <div class = "pageHeaderBox">
+                    <button onclick="GetButtonNoParams()" id="Get">Get</button>
+                    <button onclick="PostButton()" id="Post">Post</button>      
+                </div>
+                                
+            </div>
+
             
-        <button onclick="GetButtonNoParams()" id="Get">Get</button>
-        <button onclick="PostButton()" id="Post">Post</button>
+            
+        </div>
+        
 
-        <h2>Movies List:</h2>
-        <ul id="movies"></ul>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="JS/main.js"></script>
+        <div class="pageHeaderBox">            
+            <h2>Movies List:</h2>
+            <ul id="movies"></ul>
+        </div>
+
+
+        <p>*Note: to use edit, fill out fields above with desired edit information, then press edit on desired movie*</p>
     </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="JS/main.js"></script>
+   
 </html>

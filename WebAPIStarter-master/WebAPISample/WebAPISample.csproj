@@ -230,6 +230,10 @@
     <Compile Include="Migrations\202001131923457_AddedGenreToMovieModel.Designer.cs">
       <DependentUpon>202001131923457_AddedGenreToMovieModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001151526134_AddedImageURLPropertyToModel.cs" />
+    <Compile Include="Migrations\202001151526134_AddedImageURLPropertyToModel.Designer.cs">
+      <DependentUpon>202001151526134_AddedImageURLPropertyToModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -355,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001131923457_AddedGenreToMovieModel.resx">
       <DependentUpon>202001131923457_AddedGenreToMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151526134_AddedImageURLPropertyToModel.resx">
+      <DependentUpon>202001151526134_AddedImageURLPropertyToModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

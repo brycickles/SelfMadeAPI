@@ -1,0 +1,63 @@
+body{
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a{
+    color: #00B7FF;
+}
+ul{
+    padding: 0;
+}
+ul li{
+    list-style-type: none;
+    background: #EFEFEF;
+    padding: 10px;
+    margin-bottom: 10px;
+    
+}
+
+img { 
+    float: right;
+    height: 325px; 
+    width: 228px;
+}
+
+.pageHeaderBox { 
+    background-color: darkgrey;
+    width: auto; 
+    border: 10px solid darkred;
+    padding: 25px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.buttons {     
+    position: relative;
+    bottom: 100px;
+    
+    float: right;   
+    width: 100px;
+    height: 45px;
+    
+}
+#Get{ 
+    position: center; 
+    width: auto;
+    height: auto;
+}
+
+#Post{ 
+    position: center;
+    width: auto;
+    height: auto;
+    
+}
+
+body { 
+    background-image: url(../IMAGES/Cinema.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
