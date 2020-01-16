@@ -14,10 +14,10 @@ function GetButtonNoParams(){
     $(function (){
         $.ajax({
             type: 'GET',
-            url: 'https://localhost:44352/api/movie', //mine
-            //url: 'https://localhost:44313/api/movie', //matts
+            //url: 'https://localhost:44352/api/movie', //mine
+            url: 'https://localhost:44313/api/movie', //matts
             success: function(movies) { 
-                //console.log('success', movies);
+                console.log('success', movies);
                 $.each(movies, function(i, movie){ //goes through array of data and manipulates each item 
                     addMovie(movie);
                 });
@@ -38,8 +38,8 @@ function PostButton(){
 
         $.ajax({
             type: 'POST',
-            url: 'https://localhost:44352/api/movie', //mine
-            //url: 'https://localhost:44313/api/movie', //matts
+            //url: 'https://localhost:44352/api/movie', //mine
+            url: 'https://localhost:44313/api/movie', //matts
             data: movie, //points to movie object declared at beginning of function 
             success: function(){   
                 $('#Title').val('');
@@ -69,8 +69,8 @@ function PutButton(id){
         console.log(url);
         $.ajax({    
             type: 'PUT',
-            url: 'https://localhost:44352/api/movie/' + id, //mine
-            //url: 'https://localhost:44313/api/movie/' + id, //matts
+            //url: 'https://localhost:44352/api/movie/' + id, //mine
+            url: 'https://localhost:44313/api/movie/' + id, //matts
             data: movie, //this movie object is being passed as the body parameter, held as data
             success: function(){     
                 $('ul').empty();
@@ -86,8 +86,8 @@ function DeleteButton(id){
     $(function (){
         $.ajax({
             type: 'DELETE',
-            url: 'https://localhost:44352/api/movie/' + id, //mine
-            //url: 'https://localhost:44313/api/movie/ + id, //matts
+            //url: 'https://localhost:44352/api/movie/' + id, //mine
+            url: 'https://localhost:44313/api/movie/' + id, //matts
             success: function(){
                 $('ul').empty();
                 GetButtonNoParams();

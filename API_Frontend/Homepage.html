@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="/CSS/stylesheet.css"></script>
 <link rel="stylesheet" type="text/css" href="CSS/stylesheet.css"/>
 
@@ -10,24 +11,45 @@
         </title> 
     </head>
     <body>
-        <div class="pageHeaderBox">
-            
-            <h1>Movie Database</h1>            
-            <p>Title: <input type="text" id="Title"></p>
-            <p>Director: <input type="text" id="Director"></p>
-            <p>Genre: <input type="text" id="Genre"></p>    
-
-            <div class="buttons">
-                <div class = "pageHeaderBox">
-                    <button onclick="GetButtonNoParams()" id="Get">Get</button>
-                    <button onclick="PostButton()" id="Post">Post</button>      
+    <div >
+        <div class="pageHeaderBox row">
+                
+                <div class= "col-md-3" >
+                    <h1>Movie Database</h1>            
+                    <p>Title: <input type="text" id="Title"></p>
+                    <p>Director: <input type="text" id="Director"></p>
+                    <p>Genre: <input type="text" id="Genre"></p>    
                 </div>
-                                
-            </div>
+                 
+                <div class="col-md-3">
+                   <img style="float: left; height: 244px" src="IMAGES/images.png">  
+                </div>
+                    
+                <div class = "col-md-6" >
 
+                    <div class="row" >
+                        <button onclick="GetButtonNoParams()" id="Get" class="btn btn-outline-danger col-md-6">Get</button>
+                    </div>
+                    <h4>Click Here To Grab A List Of Our Movies</h4>
+
+                    <br> 
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <h4 style="padding-left: 500px" >Click Here To Post Your Movie</h4>
+                    <div class="row"> 
+                        <div class="col-md-6"></div>                             
+                        <button onclick="PostButton()" id="Post"class="btn btn-outline-danger col-md-6" >Post</button> 
+                    </div>
+
+                </div>
+
+        </div>   
             
-            
-        </div>
+    </div>
         
 
 
